@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApplication1
+{
+    internal class Program
+    {
+        private delegate object ObjectRetriever();
+
+        private class Test
+        {
+            private static void Main()
+            {
+                ObjectRetriever o = RetriveString;
+                object result = o();
+                Console.WriteLine(result); // hello
+            }
+
+            private static string RetriveString()
+            {
+                return "hello";
+            }
+        }
+    }
+}
