@@ -1,0 +1,23 @@
+using System;
+
+namespace ConsoleApplication1
+{
+    internal class Program
+    {
+        private delegate void StringAction<T>(T a);
+
+        private class Test
+        {
+            private static void Main()
+            {
+                StringAction<string> sa = ActOnObject;
+                sa("hello");
+            }
+
+            private static void ActOnObject(object o)
+            {
+                Console.WriteLine(o); // hello
+            }
+        }
+    }
+}
